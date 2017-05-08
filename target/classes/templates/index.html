@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	  <title>Spring Boot - Angularjs Example</title>
+	  <meta charset="utf-8" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1" />
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+	  <script src="/js/controller.js"></script>
+	  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+	  
+</head>
+<body>
+
+<div class="container" ng-app="app">
+
+	
+	
+	<div ng-controller="postcontroller">
+			<form name="topicForm" ng-submit="submitForm()">
+			<h1>Topics</h1>
+				<table>
+					<tbody><tr>
+						<td>id <input type="text" name="id" class="form-control" ng-model="id" /></td>
+						<td>name <input type="text" name="name" class="form-control" ng-model="name" /></td>
+						<td>Max Marks Achieved<input type="text" name="weightage" class="form-control" ng-model="weightage" /></td>
+					</tr>
+					<tr><td><button type="submit" class="btn btn-primary">Submit</button></td></tr>
+					</tbody>
+				</table>
+			</form>
+			<p>{{postResultMessage}}</p>
+	</div>
+	
+	<div ng-controller="getcontroller">
+		<button id="btn-id" ng-click="getfunction()">Get All Topics</button>
+		
+        	<li >Subject id - Subject name - Max marks </li>
+    	
+		<ul>
+        	<li ng-repeat="topic in response">{{topic.id + "    -    " + topic.name + "    -    " + topic.weightage}}</li>
+    	</ul>
+		
+	</div>
+	</div>
+	
+</body>
+</html>
