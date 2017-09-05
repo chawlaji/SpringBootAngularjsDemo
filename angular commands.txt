@@ -1,0 +1,27 @@
+Set proxy 
+
+npm config set proxy http://10.135.0.26:8080/
+npm config set https-proxy http://10.135.0.26:8080/
+
+install angular 
+
+npm install -g @angular/cli
+
+run app
+
+ng serve / npm start
+
+
+add bootstrap
+
+npm install ngx-bootstrap bootstrap --save
+
+add  in 
+
+"styles": [
+
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+		
+        "styles.css"
+      ],
+
