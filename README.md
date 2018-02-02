@@ -22,38 +22,23 @@ example-> is add spring mvc in pom-> spring boot will auto configure dispatcher 
 
 embedded server ? -> tomcat bind with war, so direct deploy on Linux machine having only java
 
-for monitoring it provide Actuator
-
-pom->
-
-<dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-actuator</artifactId>
-</dependency>
-<dependency>
-    <groupId>org.springframework.data</groupId>
-    <artifactId>spring-data-rest-hal-browser</artifactId>
- </dependency>
+for monitoring it provides Actuator
+add entry to pom for acutator and hal browser
 
 Access url-> localhost:port/actuator/index.html#/actuator
 
 application.properties -> 
 
 //to access all metrics you need all access from spring security so better disable it on dev
-management.security.enabled=fals
+management.security.enabled=false
 
 AutoRead Class files- > (one option is springLoaded http://blog.netgloo.com/2014/05/21/hot-swapping-in-spring-boot-with-eclipse-sts/) 
 
 easiest to configure
 DevTools-> auto reload for advance hot swapping as default hot swapping has limitations
 
-pom.xml
-<dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-devtools</artifactId>
-        <optional>true</optional>
-    </dependency>
+just add dependency entry in pom.xml
 
-will work out of the box if any issues try adding below
+it will work out of the box if any issues try adding below
 Application.properties
 spring.devtools.livereload.enabled=true
